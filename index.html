@@ -95,6 +95,24 @@
     .artifacts{grid-template-columns:1fr}
   }
 
+  .card-title-link{text-decoration:none;transition:color .2s}
+  .card-title-link:hover{color:var(--rose)}
+  .card-title-link::after{content:" ↗";font-size:.7em;color:var(--rose);opacity:0;transition:opacity .2s}
+  .card-title-link:hover::after{opacity:1}
+  .featured .card-title-link:hover{color:#C9A2A9}
+
+  .email-line{margin-top:22px;font-family:var(--mono);font-size:.88rem;color:var(--ink-soft);display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .copy-btn{font-family:var(--mono);font-size:.72rem;padding:5px 14px;border-radius:100px;border:1px solid var(--line);background:#fff;color:var(--ink-soft);cursor:pointer;transition:all .15s}
+  .copy-btn:hover{border-color:var(--rose);color:var(--rose)}
+
+  .f-metrics{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .f-metric{border-left:2px solid var(--rose);padding-left:14px}
+  .f-num{font-family:var(--display);font-size:1.6rem;color:var(--ivory)}
+  .f-lab{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#B8B0C0;margin-top:4px}
+  .f-cta{display:inline-block;margin-top:26px;font-weight:600;font-size:.92rem;color:#E8C4CB;text-decoration:none;border-bottom:1.5px solid rgba(232,196,203,.4);padding-bottom:2px;transition:border-color .2s, color .2s}
+  .f-cta:hover{color:#fff;border-color:#fff}
+  @media (max-width:820px){.f-metrics{grid-template-columns:repeat(2,1fr)}}
+
   /* SKILLS */
   .skills{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .skill-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
@@ -173,7 +191,7 @@
 
 <nav>
   <div class="nav-inner">
-    <div class="nav-name">Sivasankari M.</div>
+    <div class="nav-name">Sivasankari Muruganantham</div>
     <div class="nav-links">
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
@@ -188,7 +206,7 @@
     <div class="eyebrow">MSc Business Analytics · Queen's University Belfast</div>
     <h1>Turning data into decisions people can act on.</h1>
     <div class="hero-role" aria-live="polite"><span id="typed"></span><span class="type-cursor" aria-hidden="true"></span></div>
-    <p class="hero-sub">I'm <strong>Sivasankari Muruganantham (Shivi)</strong> — a data-driven Business Analyst who bridges the gap between technical analysis and business stakeholders. From predictive models in R to Tableau dashboards and MILP optimisation, my work always ends the same way: a clear recommendation someone can act on.</p>
+    <p class="hero-sub">I'm <strong>Sivasankari Muruganantham</strong> — a data-driven Business Analyst who bridges the gap between technical analysis and business stakeholders. From predictive models in R to Tableau dashboards and MILP optimisation, my work always ends the same way: a clear recommendation someone can act on.</p>
     <div class="stats">
       <div class="stat"><div class="stat-num" data-count="13">0</div><div class="stat-label">Projects delivered</div></div>
       <div class="stat"><div class="stat-num" data-count="9">0</div><div class="stat-label">Modules mastered</div></div>
@@ -209,11 +227,11 @@
 <section id="projects">
   <div class="wrap">
     <div class="sec-head"><h2>Projects</h2><span class="sec-count">13 projects · analytics + business analysis</span></div>
-    <p class="sec-intro">A featured end-to-end business analysis engagement, followed by twelve analytics projects spanning the full lifecycle — from raw data and problem framing through modelling to business recommendations. Filter by the skills you're hiring for.</p>
+    <p class="sec-intro">A featured end-to-end business analysis engagement, followed by twelve analytics projects spanning the full lifecycle — from raw data and problem framing through modelling to business recommendations. Filter by the skills you're hiring for — click any project title to view the full report on GitHub.</p>
 
     <article class="featured">
       <div class="card-module">Featured · Business Analysis · End-to-End Project Lifecycle</div>
-      <h3>Pitman Training — CRM Selection &amp; Website Re-Design</h3>
+      <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/business-analysis/pitman-crm-selection" target="_blank" rel="noopener">Pitman Training — CRM Selection &amp; Website Re-Design</a></h3>
       <p>A full business analysis engagement delivered under a consultancy framing (Caldwell Foster Advisory) for Pitman Training, a training provider managing 27,000+ contacts entirely in spreadsheets. I owned the analysis from problem definition to project closure: modelling the broken AS-IS sales process, defining the target operating model, capturing requirements as user stories with MoSCoW prioritisation and acceptance criteria, evaluating Salesforce vs ActiveCampaign vs MailChimp against a £97k budget, and prototyping the new customer booking journey.</p>
       <div class="artifacts">
         <div class="artifact"><div class="a-step">01 · Business Case</div><div class="a-name">CRM options evaluation &amp; recommendation</div><div class="a-desc">Three solutions scored against budget, users, integration and timeline — with a formal recommendation to senior stakeholders.</div></div>
@@ -223,6 +241,13 @@
         <div class="artifact"><div class="a-step">05 · Prototyping</div><div class="a-name">Balsamiq wireframes</div><div class="a-desc">New course page and 3-step call-booking journey, replacing the enquiry form that leads were falling out of.</div></div>
         <div class="artifact"><div class="a-step">06 · Project Closure</div><div class="a-name">End-of-project report</div><div class="a-desc">Performance against objectives, schedule and budget, lessons learned and follow-on actions.</div></div>
       </div>
+      <div class="f-metrics">
+        <div class="f-metric"><div class="f-num">£97k</div><div class="f-lab">Project budget</div></div>
+        <div class="f-metric"><div class="f-num">27,321</div><div class="f-lab">Contacts migrating to CRM</div></div>
+        <div class="f-metric"><div class="f-num">3</div><div class="f-lab">CRM options evaluated</div></div>
+        <div class="f-metric"><div class="f-num">18%</div><div class="f-lab">Revenue growth target</div></div>
+      </div>
+      <a class="f-cta" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/business-analysis/pitman-crm-selection" target="_blank" rel="noopener">View all six deliverables on GitHub →</a>
       <div class="tags"><span class="tag">Business Case</span><span class="tag">BPMN / Process Mapping</span><span class="tag">Use Cases</span><span class="tag">User Stories</span><span class="tag">MoSCoW</span><span class="tag">Acceptance Criteria</span><span class="tag">Wireframing</span><span class="tag">Stakeholder Management</span></div>
     </article>
 
@@ -242,7 +267,7 @@
 
       <article class="card" data-tags="ml r">
         <div class="card-module">Advanced Analytics &amp; Machine Learning</div>
-        <h3>Predicting Star Performance in Collaboration Networks</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/07-ml-star-performance-networks" target="_blank" rel="noopener">Predicting Star Performance in Collaboration Networks</a></h3>
         <p>Modelled what makes a "star" performer emerge from professional collaboration networks. Compared linear, polynomial, LASSO and classification models, then went beyond the brief with ten original extensions — career-stage analysis, engineered features, threshold optimisation and misclassified-case profiling of the "missed stars".</p>
         <div class="spec"><b>data</b> collaboration network dataset · <b>methods</b> LASSO, logistic regression, LDA, interaction effects · <b>outcome</b> four evidence-based "pathways to stardom" archetypes</div>
         <div class="tags"><span class="tag">R</span><span class="tag">LASSO</span><span class="tag">Logistic Regression</span><span class="tag">LDA</span><span class="tag">Feature Engineering</span></div>
@@ -250,15 +275,15 @@
 
       <article class="card" data-tags="ml r">
         <div class="card-module">Advanced Analytics &amp; Machine Learning</div>
-        <h3>Predicting Innovation Impact in Biomedical Research</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/08-ml-innovation-impact-pubmed" target="_blank" rel="noopener">Predicting Innovation Impact in Biomedical Research</a></h3>
         <p>Analysed 27,226 PubMed records to identify what separates highly-cited research from work that's quickly forgotten — testing theories of novelty, optimal distinctiveness and network structure. Built and compared tree-based models, random forests, SVM and LDA, with a careful bias–variance and multi-method analysis.</p>
         <div class="spec"><b>data</b> 27,226 PubMed records (2010–11) · <b>methods</b> random forest, decision trees, SVM, LDA, LASSO · <b>outcome</b> classified high-citation research &amp; explained its drivers</div>
         <div class="tags"><span class="tag">R</span><span class="tag">Random Forest</span><span class="tag">SVM</span><span class="tag">Trees</span><span class="tag">Network Analysis</span></div>
       </article>
 
-      <article class="card" data-tags="r ml">
+      <article class="card" data-tags="r ml tableau">
         <div class="card-module">Human Resource Analytics</div>
-        <h3>Workforce Attrition — Dashboard Storytelling &amp; Prediction</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/04-hr-analytics-attrition-tableau" target="_blank" rel="noopener">Workforce Attrition — Dashboard Storytelling &amp; Prediction</a></h3>
         <p>A two-part study for a pharmaceutical workforce: an interactive Tableau story built on a context–tension–resolution narrative to surface attrition risk patterns, paired with a predictive model identifying which employees are most likely to leave — translated into retention recommendations for senior management.</p>
         <div class="spec"><b>data</b> multi-department employee dataset · <b>methods</b> Tableau storytelling, predictive classification · <b>outcome</b> attrition drivers + retention strategy for leadership</div>
         <div class="tags"><span class="tag">Tableau</span><span class="tag">Predictive Modelling</span><span class="tag">Data Storytelling</span><span class="tag">HR Analytics</span></div>
@@ -266,7 +291,7 @@
 
       <article class="card" data-tags="sql r">
         <div class="card-module">Data Management</div>
-        <h3>Customer Insight Pipeline for an Insurance Company</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/01-data-management-insurance-insights" target="_blank" rel="noopener">Customer Insight Pipeline for an Insurance Company</a></h3>
         <p>Built an end-to-end data management workflow: integrated four relational datasets in SQLite, constructed an analytics base table, ran a full data-quality audit and treatment in R, and delivered marketing-channel insights — plus an evaluation of Apache Spark for scaling the company's future analytics capability.</p>
         <div class="spec"><b>data</b> 4 relational customer/policy tables · <b>methods</b> SQL joins, ABT construction, data-quality treatment in R · <b>outcome</b> channel-targeting recommendations + big-data roadmap</div>
         <div class="tags"><span class="tag">SQL</span><span class="tag">SQLite</span><span class="tag">R</span><span class="tag">Data Quality</span><span class="tag">Apache Spark</span></div>
@@ -274,7 +299,7 @@
 
       <article class="card" data-tags="marketing r ml">
         <div class="card-module">Marketing Analytics</div>
-        <h3>Customer Segmentation &amp; Product Strategy for a New Coffee Brand</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/12-marketing-coffee-segmentation-conjoint" target="_blank" rel="noopener">Customer Segmentation &amp; Product Strategy for a New Coffee Brand</a></h3>
         <p>Guided the launch strategy for a retailer's own-brand coffee: segmented customers through cluster analysis, used conjoint analysis to quantify which product attributes customers value most, and mapped competitive positioning — ending with a concrete product and targeting recommendation.</p>
         <div class="spec"><b>data</b> customer survey &amp; preference data · <b>methods</b> k-means clustering, conjoint analysis, perceptual mapping · <b>outcome</b> segment-led product design &amp; positioning strategy</div>
         <div class="tags"><span class="tag">Clustering</span><span class="tag">Conjoint Analysis</span><span class="tag">Positioning</span><span class="tag">R</span></div>
@@ -282,7 +307,7 @@
 
       <article class="card" data-tags="python ml">
         <div class="card-module">Data Mining</div>
-        <h3>Descriptive, Predictive &amp; Text Analytics for Airline Reviews</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/11-data-mining-airline-reviews-nlp" target="_blank" rel="noopener">Descriptive, Predictive &amp; Text Analytics for Airline Reviews</a></h3>
         <p>Applied the CRISP-DM framework to airline customer reviews, combining numerical and text analytics. Built a text pre-processing pipeline, compared VADER and TextBlob sentiment engines, and linked sentiment and service features to customer recommendation behaviour.</p>
         <div class="spec"><b>data</b> airline customer reviews (numeric + text) · <b>methods</b> CRISP-DM, NLP pre-processing, sentiment analysis, predictive models · <b>outcome</b> service drivers of customer satisfaction</div>
         <div class="tags"><span class="tag">Text Mining</span><span class="tag">NLP</span><span class="tag">Sentiment Analysis</span><span class="tag">CRISP-DM</span></div>
@@ -290,7 +315,7 @@
 
       <article class="card" data-tags="optimisation r">
         <div class="card-module">Data-Driven Decision Making</div>
-        <h3>Semiannual Capacity Planning for a Hospital Endoscopy Unit</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/09-optimisation-endoscopy-capacity-milp" target="_blank" rel="noopener">Semiannual Capacity Planning for a Hospital Endoscopy Unit</a></h3>
         <p>Formulated a full mixed-integer linear programme (MILP) to plan 26 weeks of capacity across 10 procedure rooms in a GI unit — balancing setup costs, allocation costs, demand satisfaction and clinician utilisation. Solved in R and translated the optimal room configuration into a plain-English managerial statement.</p>
         <div class="spec"><b>scope</b> 10 rooms × 26 weeks · <b>methods</b> MILP formulation, exact optimisation in R · <b>outcome</b> cost-optimal room configuration meeting patient demand</div>
         <div class="tags"><span class="tag">MILP</span><span class="tag">Optimisation</span><span class="tag">R</span><span class="tag">Healthcare</span></div>
@@ -298,7 +323,7 @@
 
       <article class="card" data-tags="optimisation">
         <div class="card-module">Data-Driven Decision Making · Group</div>
-        <h3>Prescriptive Analytics for Hospital Ophthalmology Scheduling</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/10-optimisation-hospital-scheduling-group" target="_blank" rel="noopener">Prescriptive Analytics for Hospital Ophthalmology Scheduling</a></h3>
         <p>A six-person group consultancy project for Primazicht Hospital: modelled ophthalmology patient flow and scheduling in Excel, defined the cost function and decision structure, and delivered prescriptive recommendations to reduce waiting times and improve capacity utilisation.</p>
         <div class="spec"><b>client</b> Primazicht Hospital (case) · <b>methods</b> Excel optimisation modelling, patient-flow analysis · <b>outcome</b> data-driven scheduling recommendations · <b>role</b> analytics team member</div>
         <div class="tags"><span class="tag">Excel Solver</span><span class="tag">Prescriptive Analytics</span><span class="tag">Teamwork</span><span class="tag">Healthcare</span></div>
@@ -306,7 +331,7 @@
 
       <article class="card" data-tags="r ml">
         <div class="card-module">Statistics for Business</div>
-        <h3>Predicting House Sale Prices in Austin, Texas</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/02-statistics-housing-price-prediction" target="_blank" rel="noopener">Predicting House Sale Prices in Austin, Texas</a></h3>
         <p>Built a regression pipeline to understand and predict housing prices: cleaned and prepared the data, handled outliers, ran exploratory analysis across numeric and categorical drivers, and developed justified regression models with a documented, reproducible workflow.</p>
         <div class="spec"><b>data</b> Austin housing market dataset · <b>methods</b> data cleaning, EDA, multiple linear regression · <b>outcome</b> interpretable price-driver model</div>
         <div class="tags"><span class="tag">R</span><span class="tag">Regression</span><span class="tag">EDA</span><span class="tag">Data Cleaning</span></div>
@@ -314,7 +339,7 @@
 
       <article class="card" data-tags="r ml marketing">
         <div class="card-module">Statistics for Business</div>
-        <h3>Predicting Customer Subscription to Bank Term Deposits</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/03-statistics-bank-term-deposit-prediction" target="_blank" rel="noopener">Predicting Customer Subscription to Bank Term Deposits</a></h3>
         <p>Modelled which bank customers are most likely to subscribe to term deposits, so marketing spend can be targeted rather than sprayed. Combined measures of association, logistic regression with diagnostics, and performance evaluation — grounded in the direct-marketing literature.</p>
         <div class="spec"><b>data</b> bank direct-marketing campaign data · <b>methods</b> logistic regression, association measures, model diagnostics · <b>outcome</b> targeting model to cut campaign waste</div>
         <div class="tags"><span class="tag">R</span><span class="tag">Logistic Regression</span><span class="tag">Marketing</span><span class="tag">Model Diagnostics</span></div>
@@ -322,7 +347,7 @@
 
       <article class="card" data-tags="writing">
         <div class="card-module">AI in Business &amp; Society</div>
-        <h3>AI &amp; Society: How Today's Algorithms Design Tomorrow's World</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/05-ai-and-society-essay" target="_blank" rel="noopener">AI &amp; Society: How Today's Algorithms Design Tomorrow's World</a></h3>
         <p>A critical essay on who controls the algorithmic systems shaping everyday life — analysing bias, privacy and governance through theories of technological determinism and social shaping, from the EU AI Act to the "principle-to-practice gap" in corporate AI ethics.</p>
         <div class="spec"><b>form</b> academic blog + reflective statement · <b>lens</b> technology &amp; society theory, AI governance · <b>outcome</b> published-style critical analysis</div>
         <div class="tags"><span class="tag">AI Ethics</span><span class="tag">Critical Analysis</span><span class="tag">Research Writing</span></div>
@@ -330,7 +355,7 @@
 
       <article class="card" data-tags="writing">
         <div class="card-module">AI in Business &amp; Society</div>
-        <h3>Leadership Competence in the Algorithmic Age</h3>
+        <h3><a class="card-title-link" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects/tree/main/analytics/06-ai-leadership-essay" target="_blank" rel="noopener">Leadership Competence in the Algorithmic Age</a></h3>
         <p>Argued that AI doesn't diminish leadership — it reconceptualises it. As algorithms absorb technical and analytical tasks, leadership shifts toward human judgement, ethical interpretation and sensemaking. Explores how organisations should build hybrid human–AI decision-making.</p>
         <div class="spec"><b>form</b> academic blog + reflective statement · <b>lens</b> leadership theory, e-leadership, algorithmic management · <b>outcome</b> framework for leading with AI</div>
         <div class="tags"><span class="tag">AI &amp; Leadership</span><span class="tag">Organisational Theory</span><span class="tag">Research Writing</span></div>
@@ -404,8 +429,13 @@
     <h2>Let's talk.</h2>
     <p>I'm actively seeking Business Analyst and Analytics opportunities in the UK. If my work fits what you're building, I'd love to hear from you.</p>
     <div class="hero-cta" style="justify-content:center">
-      <a class="btn btn-primary" href="mailto:smuruganantham01@qub.ac.uk">Email me</a>
+      <a class="btn btn-primary" href="mailto:smuruganantham01@qub.ac.uk?subject=Opportunity%20—%20Business%20Analyst%20role">Email me</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/sivasankari-m-5a6601187/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/Sivasankari-Muruganantham/portfolio-projects" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="email-line">
+      <span id="emailText">smuruganantham01@qub.ac.uk</span>
+      <button class="copy-btn" id="copyEmail" aria-label="Copy email address">Copy</button>
     </div>
   </div>
 </section>
@@ -495,6 +525,20 @@
   const toTop = document.getElementById('toTop');
   window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 600), {passive:true});
   toTop.addEventListener('click', () => window.scrollTo({top:0, behavior: reduceMotion ? 'auto' : 'smooth'}));
+
+  // Copy email
+  const copyBtn = document.getElementById('copyEmail');
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText('smuruganantham01@qub.ac.uk');
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+    } catch (e) {
+      const r = document.createRange();
+      r.selectNode(document.getElementById('emailText'));
+      getSelection().removeAllRanges(); getSelection().addRange(r);
+    }
+  });
 </script>
 
 </body>
