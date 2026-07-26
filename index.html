@@ -196,6 +196,33 @@
     .reveal{opacity:1;transform:none;transition:none}
   }
 
+  /* ===== SIGNATURE HERO VISUAL ===== */
+  .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:center}
+  .hero-visual{display:flex;justify-content:center}
+  .signal-svg{width:100%;max-width:420px;height:auto;overflow:visible}
+  .signal-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;fill:var(--ink-soft);opacity:.75}
+  .signal-label--end{fill:var(--rose);opacity:0;animation:labelIn .6s ease forwards;animation-delay:1.7s}
+  .dots circle{fill:var(--sage);opacity:0;transform-origin:center;animation:dotIn .5s ease forwards;animation-delay:calc(var(--d) * .09s)}
+  .signal-path{fill:none;stroke:var(--rose);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:640;stroke-dashoffset:640;animation:drawPath 1.6s cubic-bezier(.65,0,.35,1) forwards;animation-delay:.5s}
+  .decision-mark circle{fill:var(--ink);opacity:0;transform-origin:440px 150px;animation:markPop .5s cubic-bezier(.34,1.56,.64,1) forwards;animation-delay:2s}
+  .decision-mark .check{fill:none;stroke:var(--ivory);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:20;stroke-dashoffset:20;animation:drawCheck .35s ease forwards;animation-delay:2.25s}
+  @keyframes dotIn{from{opacity:0;transform:scale(.3)}to{opacity:.55;transform:scale(1)}}
+  @keyframes drawPath{to{stroke-dashoffset:0}}
+  @keyframes markPop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+  @keyframes drawCheck{to{stroke-dashoffset:0}}
+  @keyframes labelIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+
+  @media (max-width:820px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-visual{margin-top:12px;order:-1}
+    .signal-svg{max-width:280px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .dots circle, .signal-path, .decision-mark circle, .decision-mark .check, .signal-label--end{
+      animation:none !important; opacity:1 !important; stroke-dashoffset:0 !important; transform:none !important;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce){
     *{transition:none!important}
     html{scroll-behavior:auto}
@@ -218,22 +245,49 @@
 
 <header>
   <div class="wrap">
-    <div class="eyebrow">MSc Business Analytics · Queen's University Belfast</div>
-    <h1>Turning data into decisions people can act on.</h1>
-    <div class="hero-role" aria-live="polite"><span id="typed"></span><span class="type-cursor" aria-hidden="true"></span></div>
-    <p class="hero-sub">I'm <strong>Sivasankari Muruganantham</strong> — a data-driven Business Analyst who bridges the gap between technical analysis and business stakeholders. From predictive models in R to Tableau dashboards and MILP optimisation, my work always ends the same way: a clear recommendation someone can act on.</p>
-    <div class="stats">
-      <div class="stat"><div class="stat-num" data-count="13">0</div><div class="stat-label">Projects delivered</div></div>
-      <div class="stat"><div class="stat-num" data-count="9">0</div><div class="stat-label">Modules mastered</div></div>
-      <div class="stat"><div class="stat-num" data-count="27226">0</div><div class="stat-label">Largest dataset (rows)</div></div>
-      <div class="stat"><div class="stat-num" data-count="6">0</div><div class="stat-label">BA lifecycle artefacts</div></div>
-    </div>
-    <div class="hero-meta">
-      <span class="chip">R</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Excel Solver</span><span class="chip">Machine Learning</span>
-    </div>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#projects">View my 12 projects</a>
-      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow">MSc Business Analytics · Queen's University Belfast</div>
+        <h1>Turning data into decisions people can act on.</h1>
+        <div class="hero-role" aria-live="polite"><span id="typed"></span><span class="type-cursor" aria-hidden="true"></span></div>
+        <p class="hero-sub">I'm <strong>Sivasankari Muruganantham</strong> — a data-driven Business Analyst who bridges the gap between technical analysis and business stakeholders. From predictive models in R to Tableau dashboards and MILP optimisation, my work always ends the same way: a clear recommendation someone can act on.</p>
+        <div class="stats">
+          <div class="stat"><div class="stat-num" data-count="13">0</div><div class="stat-label">Projects delivered</div></div>
+          <div class="stat"><div class="stat-num" data-count="9">0</div><div class="stat-label">Modules mastered</div></div>
+          <div class="stat"><div class="stat-num" data-count="27226">0</div><div class="stat-label">Largest dataset (rows)</div></div>
+          <div class="stat"><div class="stat-num" data-count="6">0</div><div class="stat-label">BA lifecycle artefacts</div></div>
+        </div>
+        <div class="hero-meta">
+          <span class="chip">R</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Excel Solver</span><span class="chip">Machine Learning</span>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">View my 13 projects</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 480 420" class="signal-svg">
+          <text x="20" y="34" class="signal-label">SCATTERED DATA</text>
+          <g class="dots">
+            <circle cx="40"  cy="90"  r="5" style="--d:0"></circle>
+            <circle cx="78"  cy="140" r="4" style="--d:1"></circle>
+            <circle cx="34"  cy="180" r="6" style="--d:2"></circle>
+            <circle cx="96"  cy="70"  r="4" style="--d:3"></circle>
+            <circle cx="62"  cy="230" r="5" style="--d:4"></circle>
+            <circle cx="110" cy="195" r="4" style="--d:5"></circle>
+            <circle cx="24"  cy="130" r="4" style="--d:6"></circle>
+            <circle cx="88"  cy="260" r="5" style="--d:7"></circle>
+            <circle cx="50"  cy="290" r="4" style="--d:8"></circle>
+            <circle cx="118" cy="115" r="4" style="--d:2"></circle>
+          </g>
+          <path class="signal-path" d="M40,90 C120,120 150,260 210,240 C 260,222 300,150 440,150" />
+          <g class="decision-mark">
+            <circle cx="440" cy="150" r="9"></circle>
+            <path d="M435,150 l4,5 l9,-11" class="check"></path>
+          </g>
+          <text x="330" y="118" class="signal-label signal-label--end">CLEAR DECISION</text>
+        </svg>
+      </div>
     </div>
     <div class="hero-rule"></div>
   </div>
@@ -437,7 +491,7 @@
     <div class="about-grid">
       <div class="about-text">
         <p>I'm a Business Analytics postgraduate at <strong>Queen's University Belfast</strong>, originally from India, with a simple belief about data work: <strong>an analysis is only as good as the decision it enables.</strong></p>
-        <p>Across thirteen projects — from an end-to-end CRM selection engagement for a UK training provider to optimising hospital capacity with MILP and predicting which research papers will shape their field — I've learned to work across the full analysis lifecycle: framing the business problem, wrangling messy real-world data, choosing the right method (not just the fanciest one), and translating results into recommendations that non-technical stakeholders can act on.</p>
+        <p>Across twelve projects — from optimising hospital capacity with MILP to predicting which research papers will shape their field — I've learned to work across the full analytics lifecycle: framing the business problem, wrangling messy real-world data, choosing the right method (not just the fanciest one), and translating results into recommendations that non-technical stakeholders can act on.</p>
         <p>I'm strongest at the intersection of <strong>analysis and people</strong> — I enjoy stakeholder-facing work, workshops and storytelling as much as the modelling itself. That's why I'm building toward a data-driven Business Analyst role, and I'm currently completing my <strong>BCS Foundation Certificate in Business Analysis</strong> alongside my degree.</p>
       </div>
       <div class="about-facts">
@@ -450,6 +504,7 @@
     </div>
   </div>
 </section>
+
 <section class="contact" id="contact">
   <div class="wrap">
     <h2>Let's talk.</h2>
